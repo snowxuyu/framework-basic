@@ -55,7 +55,7 @@ public class MyBatisProvider<T extends BaseEntity> {
      *
      * @return
      */
-    public String getById(String id) {
+    public String getById(Long id) {
         initFromThreadLocal();
         SQL sql = SELECT_FROM().WHERE("ID = #{id}");
         return sql.toString();
@@ -340,7 +340,7 @@ public class MyBatisProvider<T extends BaseEntity> {
         return sql.toString();
     }
 
-    public String deleteById(String id) {
+    public String deleteById(Long id) {
         initFromThreadLocal();
 
         SQL sql = new SQL() {
