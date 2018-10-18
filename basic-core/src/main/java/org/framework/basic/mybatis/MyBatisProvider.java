@@ -59,7 +59,7 @@ public class MyBatisProvider<T extends BaseEntity> {
      * 根据主键ID查询
      * @return
      */
-    public String getById(Long id) {
+    public String getById(String id) {
         initFromThreadLocal();
         SQL sql = SELECT_FROM().WHERE("ID = #{id}");
         return sql.toString();
@@ -360,7 +360,7 @@ public class MyBatisProvider<T extends BaseEntity> {
         return sql.toString();
     }
 
-    public String deleteById(Long id) {
+    public String deleteById(String id) {
         initFromThreadLocal();
 
         SQL sql = new SQL() {
