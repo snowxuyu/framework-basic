@@ -24,7 +24,7 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
     }
 
     @Override
-    public T getById(String id) {
+    public T getById(Long id) {
         return baseDao.getById(id);
     }
 
@@ -80,7 +80,7 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
 
     @Override
     @Transactional(readOnly = false)
-    public void deleteById(String id) throws BaseException {
+    public void deleteById(Long id) throws BaseException {
         if (baseDao.deleteById(id) != 1) {
             throw new BaseException();
         }
@@ -88,8 +88,8 @@ public class BaseServiceImpl<T extends BaseEntity> implements BaseService<T> {
 
     @Override
     @Transactional(readOnly = false)
-    public void deleteById(List<String> list) throws BaseException {
-        for (String id : list) {
+    public void deleteById(List<Long> list) throws BaseException {
+        for (Long id : list) {
             deleteById(id);
         }
     }

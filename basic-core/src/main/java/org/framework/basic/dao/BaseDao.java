@@ -27,7 +27,7 @@ public abstract interface BaseDao<T extends BaseEntity> {
     @SelectProvider(type = MyBatisProvider.class, method = "getById")
     @Options(flushCache = Options.FlushCachePolicy.FALSE, useCache = true)
     @ResultMap("getMap")
-    public T getById(String id);
+    public T getById(Long id);
 
     @SelectProvider(type = MyBatisProvider.class, method = "count")
     @Options(flushCache = Options.FlushCachePolicy.FALSE, useCache = true)
@@ -75,7 +75,7 @@ public abstract interface BaseDao<T extends BaseEntity> {
 
     @DeleteProvider(type = MyBatisProvider.class, method = "deleteById")
     @Options(flushCache = Options.FlushCachePolicy.TRUE)
-    public int deleteById(String id);
+    public int deleteById(Long id);
 
     @DeleteProvider(type = MyBatisProvider.class, method = "deleteByPrimaryKey")
     @Options(flushCache = Options.FlushCachePolicy.TRUE)

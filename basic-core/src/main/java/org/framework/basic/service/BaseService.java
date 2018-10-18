@@ -23,7 +23,7 @@ public interface BaseService<T extends BaseEntity> {
      * @param id
      * @return
      */
-    public T getById(String id);
+    public T getById(Long id);
 
     /**
      * 统计熟悉相同的数据个数
@@ -87,7 +87,7 @@ public interface BaseService<T extends BaseEntity> {
      * @param
      * @return
      */
-    public void deleteById(String id) throws BaseException;
+    public void deleteById(Long id) throws BaseException;
 
     /**
      * 根据ID删除记录
@@ -95,7 +95,7 @@ public interface BaseService<T extends BaseEntity> {
      * @param
      * @return
      */
-    public void deleteById(List<String> list) throws BaseException;
+    public void deleteById(List<Long> list) throws BaseException;
 
     /**
      * 根据单表对象删除记录

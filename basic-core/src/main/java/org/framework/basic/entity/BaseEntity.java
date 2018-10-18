@@ -17,7 +17,7 @@ public class BaseEntity implements Serializable {
     public static final String MODIFY_DATE_PROPERTY_NAME = "updateTime";// "修改日期"属性名称
 
     @Id
-    private String id;
+    private Long id;
 
     private String createName;
 

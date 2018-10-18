@@ -14,13 +14,7 @@ import javax.persistence.Table;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Created by snow on 2015/8/19.
@@ -145,10 +139,6 @@ public class MyBatisProvider<T extends BaseEntity> {
         // 设置默认值
         Date now = Calendar.getInstance().getTime();
 
-        if (StringUtils.isBlank(t.getId())) {
-            t.setId(UUID.randomUUID().toString().replace("-", ""));
-        }
-
         if (t.getCreateTime() == null) {
             t.setCreateTime(now);
             t.setUpdateTime(now);
@@ -196,10 +186,6 @@ public class MyBatisProvider<T extends BaseEntity> {
         for (Object obj : list) {
 //			logger.debug("obj info:{}",obj);
             T t = (T) obj;
-
-            if (StringUtils.isBlank(t.getId())) {
-                t.setId(UUID.randomUUID().toString().replace("-", ""));
-            }
 
             if (t.getCreateTime() == null) {
                 t.setCreateTime(now);
